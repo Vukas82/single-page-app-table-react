@@ -1,21 +1,8 @@
 import React, {Component} from 'react';
-import TagModal from './Modal';
+import TagModal from './TagModal';
 import './Table.css';
 
-import { Button, Alert } from 'reactstrap';
-
-// // require( 'jquery' );
-// require( 'datatables.net-dt' );
-// // require( 'datatables.net-editor-dt' )();
-// require( 'datatables.net-buttons-dt' );
-// require( 'datatables.net-fixedcolumns-dt' );
-// require( 'datatables.net-fixedheader-dt' );
-// require( 'datatables.net-responsive-dt' );
-// // require( 'datatables.net-select-dt' );
-
-
-
-const $ = require('jquery')
+import $ from 'jquery'
 $.DataTable = require( 'datatables.net-bs4' );
 
 
@@ -23,12 +10,14 @@ $.DataTable = require( 'datatables.net-bs4' );
 
 class Table extends Component {
     state = {visible : true}
+
     componentDidMount = () => {
         
-      console.log(this.el)
-      this.$el = $(this.el)
-      this.$el.DataTable(
-          {
+        this.$el = $(this.el)
+            this.$el.DataTable( {
+
+                "dom": 'rt<"bottom"flp><"clear">',
+                
               data: this.props.data,
               columns:[
                   { title: 'Tag ID'},
@@ -37,14 +26,18 @@ class Table extends Component {
                   { title: 'My Feed.'},
                   { title: 'My Favourites'},
                   { title: 'Action'}
-              ]
+              ],
           }
-      )
+        );
     }
+
+
     toggle(){this.setState({visible: !this.state.visible})}
     componentWillUnmount() {
         this.$el.DataTable.destroy(true);
     }
+
+
     render() {
         return(
             <div>
