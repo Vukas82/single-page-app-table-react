@@ -2,17 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Table from './Table';
 
+
 class App extends Component {
 
-  
-  render() {
-    return (
-      <div className="App">
-      <Table data={this.dataSet}></Table>
-      </div>
-    );
-  }
-  
 dataSet = [
   ['1','Airi Satou','Accountant',	'Tokyo',	'33', '2008/11/28'],
   ['2','Angelica Ramos',	'Chief Executive Officer (CEO)',	'London	',	'47',	'2009/10/09'],
@@ -33,6 +25,17 @@ dataSet = [
   ['10','Fiona Green',	'Chief Operating'	,'San Francisco'	,'48',	'2010/03/11',],
   ['10','Garrett Winters',	'Accountant'	,'Tokyo'	,'63',	'2011/07/25']
   ]
+
+
+  
+  render() {
+    return (
+      <div className="App">
+      <Table data={this.dataSet}></Table>
+      </div>
+    );
+  }
+  
 }
 
 export default App;

@@ -42,7 +42,7 @@ class Table extends Component {
         return(
             <div>
                 <TagModal></TagModal>
-                <table id="myTable" className="table table-striped table-bordered table-hover table-sm" width="100%" ref = { el => this.el = el }></table>
+                    <table id="myTable" className="table table-striped table-bordered table-hover table-sm" width="100%" ref = { el => this.el = el }></table>
             </div>    
             
         )
